@@ -1,0 +1,173 @@
+<html xmlns:act="http://www.ujf-grenoble.fr/l3miage/actes" xmlns:cab="http://www.ujf-grenoble.fr/l3miage/medical">
+    <head>
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="../css/infirmierPage.css">
+        <title>Cabinet</title>
+        <script type="text/javascript" src="../js/facture.js"></script><script type="text/javascript">
+                    
+                        function openFacture(prenom, nom, actes) {
+                            var width  = 500;
+                            var height = 300;
+                            if(window.innerWidth) {
+                                var left = (window.innerWidth-width)/2;
+                                var top = (window.innerHeight-height)/2;
+                            }
+                            else {
+                                var left = (document.body.clientWidth-width)/2;
+                                var top = (document.body.clientHeight-height)/2;
+                            }
+                            var factureWindow = window.open('','facture','menubar=yes, scrollbars=yes, top='+top+', left='+left+', width='+width+', height='+height+'');
+                            var factureText = afficherFacture(prenom, nom, actes);
+                            factureWindow.document.write(factureText);
+                        }
+                    
+                </script>
+    </head>
+    <body>
+        <div id="banniere_image"></div>
+        <div id="corps">
+            <div id="entete">
+                <img src="../photo/sarah.jpg">
+                <h1 id="salutation">
+                                    Bonjour Sarah,
+                
+                    <br>
+                                    Aujourd'hui, vous avez 3 patient(s).
+                
+                    <br>
+                </h1>
+            </div>
+            <br>
+            <div id="visite">
+                <h2>Visite du 2015-12-08</h2>
+                <div id="presentation">
+                    <b>Patient :</b> Mr/Mme Al&eacute;cole&nbsp;
+        Yvon.
+        
+                    <br>
+                    <b>Adresse :</b>&nbsp;
+        50
+                        &nbsp;
+        avenue F&eacute;lix Viallet&nbsp;
+        Grenoble
+                        &nbsp;
+        38031
+            ( &eacute;tage 6 )
+        
+                </div>
+                <br>
+                <br>
+                <p>Soins &agrave; appliquer :</p>
+                <ul>
+                    <li>
+                                    Injection sous-cutan&eacute;e.
+        
+                        <br>
+                        <b>Type:</b>&nbsp;
+            pr&eacute;l&egrave;vements et injections
+                    </li>
+                </ul>
+                <br>
+                <br>
+                <div id="button">
+                    <button onclick="
+                    openFacture('Yvon',
+                    'Al&eacute;cole',
+                    '109|')
+                " type="button">
+                Facture
+            </button>
+                </div>
+            </div>
+            <br>
+            <div id="visite">
+                <h2>Visite du 2015-12-08</h2>
+                <div id="presentation">
+                    <b>Patient :</b> Mr/Mme Orouge&nbsp;
+        Elvire.
+        
+                    <br>
+                    <b>Adresse :</b>&nbsp;
+        Rond-Point de la Croix de Vie&nbsp;
+        La Tronche
+                        &nbsp;
+        38700
+                </div>
+                <br>
+                <br>
+                <p>Soins &agrave; appliquer :</p>
+                <ul>
+                    <li>
+                                    Pansement de br&ucirc;lure &eacute;tendue ou de plaie chimique ou thermique &eacute;tendue,
+            sur une surface sup&eacute;rieure &agrave; 5% de la surface corporelle.
+        
+                        <br>
+                        <b>Type:</b>&nbsp;
+            
+            pansements lourds et complexes n&eacute;cessitant des condition 
+            d'asepsie rigoueuse
+        
+                    </li>
+                </ul>
+                <br>
+                <br>
+                <div id="button">
+                    <button onclick="
+                    openFacture('Elvire',
+                    'Orouge',
+                    '300|')
+                " type="button">
+                Facture
+            </button>
+                </div>
+            </div>
+            <br>
+            <div id="visite">
+                <h2>Visite du 2015-12-08</h2>
+                <div id="presentation">
+                    <b>Patient :</b> Mr/Mme Pien&nbsp;
+        Oscare.
+        
+                    <br>
+                    <b>Adresse :</b>&nbsp;
+        rue Casimir Brenier&nbsp;
+        Grenoble
+                        &nbsp;
+        38000
+                </div>
+                <br>
+                <br>
+                <p>Soins &agrave; appliquer :</p>
+                <ul>
+                    <li>
+                         
+            Pr&eacute;l&egrave;vement par ponction veineuse directe
+        
+                        <br>
+                        <b>Type:</b>&nbsp;
+            pr&eacute;l&egrave;vements et injections
+                    </li>
+                    <li>
+                                    Inection intraveineuse directe isol&eacute;e.
+        
+                        <br>
+                        <b>Type:</b>&nbsp;
+            pr&eacute;l&egrave;vements et injections
+                    </li>
+                </ul>
+                <br>
+                <br>
+                <div id="button">
+                    <button onclick="
+                    openFacture('Oscare',
+                    'Pien',
+                    '101|104|')
+                " type="button">
+                Facture
+            </button>
+                </div>
+            </div>
+            <br>
+        </div>
+    </body>
+</html>

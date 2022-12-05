@@ -1,0 +1,72 @@
+#banniere_image
+{
+    margin-top: 15px;
+    text-align: center;
+    margin-top: 15px;
+    height: 344px;
+    width: 612px;
+    background: url('../photo/centre-de-soins.jpg') no-repeat;
+    background-size: 100%;
+    border-radius: 10px;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0px 4px 4px #1c1a19;
+    min-width: 1400px;
+}
+img{
+    width: 200px;
+    overflow: hidden;
+    border-radius: 50%;
+    box-shadow: 1px 1px 5px #4069E2;
+    float:right;
+    margin: 30px;}
+#corps{
+   
+}
+h1{
+    margin-left: 210px;
+    color: blueviolet;
+    
+}
+
+h2{
+    text-align: center
+}
+
+#salutation{
+    color: black;
+}
+
+#visite{
+    margin-left: 0px !important;
+    border-top : solid 1px black;
+}
+
+#visite ul, p{
+    margin-left: 35%;
+}
+
+#presentation{
+   margin-left: 35%;
+}
+
+#button{
+    max-width: 40px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+button {
+    
+    border-radius: 50px;
+    background: linear-gradient(145deg, #c096ff, #a17ed6);
+    box-shadow:  20px 20px 60px #9877ca,
+                 -20px -20px 60px #cea1ff;
+}
+button:hover {
+    border-radius: 50px;
+    background: #b38cee;
+    box-shadow: inset 20px 20px 60px #9877ca,
+                inset -20px -20px 60px #cea1ff;
+}

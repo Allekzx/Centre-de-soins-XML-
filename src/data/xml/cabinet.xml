@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/XML/XMLDocument.xml to edit this template
+-->
+
+
+
+<cab:cabinet
+    xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
+    xmlns:cab='http://www.ujf-grenoble.fr/l3miage/medical'
+    xsi:schemaLocation='http://www.ujf-grenoble.fr/l3miage/medical ../xsd/cabinet.xsd'>
+    <cab:nom>Soins à Grenoble</cab:nom>
+    <cab:adresse>
+        <cab:numéro>60</cab:numéro>
+        <cab:rue>rue de la Chimie</cab:rue>
+        <cab:ville>Grenoble</cab:ville>
+        <cab:codePostal>38041</cab:codePostal>
+    </cab:adresse>
+    <cab:infirmiers>
+        <cab:infirmier id="001">
+            <cab:nom>Fréchie</cab:nom>
+            <cab:prénom>Sarah</cab:prénom>
+            <cab:photo>sarah.jpg</cab:photo>
+        </cab:infirmier>
+        <cab:infirmier id="002">
+            <cab:nom>Stické</cab:nom>
+            <cab:prénom>Sophie</cab:prénom>
+            <cab:photo>sophie.jpg</cab:photo>
+        </cab:infirmier>
+        <cab:infirmier id="003">
+            <cab:nom>Ochon</cab:nom>
+            <cab:prénom>Paul</cab:prénom>
+            <cab:photo>paul.png</cab:photo>
+        </cab:infirmier>
+    </cab:infirmiers>
+    <cab:patients>
+        <cab:patient>
+            <cab:nom>Alécole</cab:nom>
+            <cab:prénom>Yvon</cab:prénom>
+            <cab:sexe>M</cab:sexe>
+            <cab:naissance>1998-08-22</cab:naissance>
+            <cab:numéro>198081305545852</cab:numéro>
+            <cab:adresse>
+                <cab:étage>6</cab:étage>
+                <cab:numéro>50</cab:numéro>
+                <cab:rue>avenue Félix Viallet</cab:rue>
+                <cab:ville>Grenoble</cab:ville>
+                <cab:codePostal>38031</cab:codePostal>
+            </cab:adresse>
+            <cab:visite date="2015-12-08" intervenant="001">
+                <cab:acte id="109"/>
+            </cab:visite>
+        </cab:patient>
+        <cab:patient>
+            <cab:nom>Orouge</cab:nom>
+            <cab:prénom>Elvire</cab:prénom>
+            <cab:sexe>F</cab:sexe>
+            <cab:naissance>1982-03-08</cab:naissance>
+            <cab:numéro>282030802305216</cab:numéro>
+            <cab:adresse>
+                <cab:rue>Rond-Point de la Croix de Vie</cab:rue>
+                <cab:ville>La Tronche</cab:ville>
+                <cab:codePostal>38700</cab:codePostal>
+            </cab:adresse>
+            <cab:visite date="2015-12-08" intervenant="001">
+                <cab:acte id="300"/>
+            </cab:visite>
+        </cab:patient>
+        <cab:patient>
+            <cab:nom>Pien</cab:nom>
+            <cab:prénom>Oscare</cab:prénom>
+            <cab:sexe>F</cab:sexe>
+            <cab:naissance>1975-03-25</cab:naissance>
+            <cab:numéro>275032506569237</cab:numéro>
+            <cab:adresse>
+                
+                <cab:rue>rue Casimir Brenier</cab:rue>
+                <cab:ville>Grenoble</cab:ville>
+                <cab:codePostal>38000</cab:codePostal>
+            </cab:adresse>
+            <cab:visite date="2015-12-08" intervenant="001">
+                <cab:acte id="101"/>
+                <cab:acte id="104"/>
+            </cab:visite>
+        </cab:patient>
+        
+        <cab:patient>
+            <cab:nom>Kapoëtla</cab:nom>
+            <cab:prénom>Xavier</cab:prénom>
+            <cab:sexe>M</cab:sexe>
+            <cab:naissance>2011-08-02</cab:naissance>
+            <cab:numéro>111080206303582</cab:numéro>
+            <cab:adresse>
+                <cab:numéro>25</cab:numéro>
+                <cab:rue>rue des Martyrs</cab:rue>
+                <cab:ville>Grenoble</cab:ville>
+                <cab:codePostal>38042</cab:codePostal>
+            </cab:adresse>
+            <cab:visite date="2015-12-08" intervenant="002">
+                <cab:acte id="111"/>
+            </cab:visite>
+        </cab:patient>
+    </cab:patients>
+
+</cab:cabinet>
+

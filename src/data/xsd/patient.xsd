@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/XML/XmlSchema.xsd to edit this template
+-->
+
+<xs:schema version="1.0"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:cab="http://www.ujf-grenoble.fr/l3miage/medical"
+           targetNamespace="http://www.ujf-grenoble.fr/l3miage/medical"
+           elementFormDefault="qualified">
+           
+    <xs:element name="patient" type="cab:Patient"/>
+        
+    <xs:complexType name="Patient">
+        <xs:sequence>
+            <xs:element name="nom" type="xs:string" minOccurs = "1" maxOccurs="1"/>
+            <xs:element name="prénom" type="xs:string" minOccurs = "1" maxOccurs="unbounded"/>
+            <xs:element name="sexe" type="cab:Sexe" minOccurs = "1" maxOccurs="1"/>
+            <xs:element name="naissance" type="xs:date" minOccurs = "1" maxOccurs="1"/>
+            <xs:element name="numéro" type="cab:Numéro" minOccurs = "1" maxOccurs="1"/>
+            <xs:element name="adresse" type="cab:Adresse" minOccurs = "1" maxOccurs="1"/>
+            <xs:element name="visite" type="cab:VisitePatient" minOccurs = "1" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="Adresse">
+        <xs:sequence>
+            <xs:element name="étage" type="xs:nonNegativeInteger" minOccurs="0" maxOccurs = "1"/>
+            <xs:element name="numéro" type="xs:nonNegativeInteger" minOccurs="0" maxOccurs = "1"/>
+            <xs:element name="rue" type="xs:string" minOccurs = "1" maxOccurs="1"/>
+            <xs:element name="ville" type="xs:string" minOccurs = "1" maxOccurs="1"/>
+            <xs:element name="codePostal" type="cab:CodePostal" minOccurs = "1" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:simpleType name="CodePostal">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[0-9]{5}"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="Sexe">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="M|F"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="Numéro">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[0-9]{15}"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:complexType name="VisitePatient">
+        <xs:sequence>
+            <xs:element name="intervenant" type="cab:Intervenant"/>
+            <xs:element name="acte" type="xs:string" maxOccurs = 'unbounded'/>
+        </xs:sequence>
+        <xs:attribute name="date" type="xs:date" use="required"/>
+    </xs:complexType>
+    
+    <xs:complexType name="Intervenant">
+        <xs:sequence>
+            <xs:element name="nom" type="xs:string" minOccurs = "1" maxOccurs="1"/>
+            <xs:element name="prénom" type="xs:string" minOccurs = "1" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+</xs:schema>
