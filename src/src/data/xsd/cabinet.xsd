@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding ="UTF-8"?>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/XML/XmlSchema.xsd to edit this template
+-->
+
+<!--
+    Document   : cabinet.xsd
+    Created on : 22 novembre 2022, 15:13
+    Author     : Léo Bouvier et Alex Delagrange
+    Description:
+        Ce fichier XML Schema a pour but de restreindre / structurer
+        le fichier cabinet.xml qui représente les données du centre de soins
+-->
+
+<xs:schema version="1.0"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:cab="http://www.ujf-grenoble.fr/l3miage/medical"
+           targetNamespace="http://www.ujf-grenoble.fr/l3miage/medical"
+           elementFormDefault="qualified">
+
+    <xs:element name="cabinet" type="cab:Cabinet">
+        <xs:keyref name="idExiste" refer="cab:infirmierIdUnique">
+            <xs:selector xpath="cab:patients/cab:patient/cab:visite"/>
+            <xs:field xpath="@intervenant"/>
+        </xs:keyref>
+    </xs:element>
+    <xs:complexType name="Cabinet">
+        <xs:sequence>
+            <xs:element name="nom" type="xs:string" minOccurs = "1" maxOccurs="1"/>
+            <xs:element name="adresse" type="cab:Adresse" minOccurs = "1" maxOccurs="1"/>
+            <xs:element name="infirmiers" type="cab:Infirmiers" minOccurs = "1" maxOccurs="1">
+                <xs:unique name="infirmierIdUnique">
+                    <xs:selector xpath="cab:infirmier"/>
+                    <xs:field xpath="@id"/>
+                </xs:unique>
+            </xs:element>
+            <xs:element name="patients" type="cab:Patients" minOccurs = "1" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="Adresse">
+        <xs:sequence>
+            <xs:element name="étage" type="xs:nonNegativeInteger" minOccurs="0" maxOccurs = "1"/>
+            <xs:element name="numéro" type="xs:nonNegativeInteger" minOccurs="0" maxOccurs = "1"/>
+            <xs:element name="rue" type="xs:string" minOccurs = "1" maxOccurs="1"/>
+            <xs:element name="ville" type="xs:string" minOccurs = "1" maxOccurs="1"/>
+            <xs:element name="codePostal" type="cab:CodePostal" minOccurs = "1" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:simpleType name="CodePostal">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[0-9]{5}"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:complexType name="Infirmiers">
+        <xs:sequence>
+            <xs:element name="infirmier" type="cab:Infirmier" maxOccurs = 'unbounded'/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="Infirmier">
+        <xs:sequence>
+            <xs:element name="nom" type="xs:string"/>
+            <xs:element name="prénom" type="xs:string"/>
+            <xs:element name="photo" type="cab:Photo"/>
+        </xs:sequence>
+        <xs:attribute name="id" type="cab:Id"/>
+    </xs:complexType>
+    <xs:simpleType name="Photo">
+        <xs:restriction base ="xs:string">
+            <xs:pattern value="([a-zA-Z0-9])*\.(ai|eps|pdf|psd|jpg|gif|tif|png|svg)"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="Id">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[0-9]{3}"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:complexType name="Patients">
+        <xs:sequence>
+            <xs:element name="patient" type="cab:Patient" maxOccurs = 'unbounded'/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="Patient">
+        <xs:sequence>
+            <xs:element name="nom" type="xs:string" minOccurs = "1" maxOccurs="1"/>
+            <xs:element name="prénom" type="xs:string" minOccurs = "1" maxOccurs="unbounded"/>
+            <xs:element name="sexe" type="cab:Sexe" minOccurs = "1" maxOccurs="1"/>
+            <xs:element name="naissance" type="xs:date" minOccurs = "1" maxOccurs="1"/>
+            <xs:element name="numéro" type="cab:Numéro" minOccurs = "1" maxOccurs="1"/>
+            <xs:element name="adresse" type="cab:Adresse" minOccurs = "1" maxOccurs="1"/>
+            <xs:element name="visite" type="cab:Visite" minOccurs = "1" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:simpleType name="Numéro">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[0-9]{15}"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:complexType name="Visite">
+        <xs:sequence>
+            <xs:element name="acte" type="cab:Acte" maxOccurs = 'unbounded'/>
+        </xs:sequence>
+        <xs:attribute name="date" type="xs:date" use="required"/>
+        <xs:attribute name="intervenant" type="cab:Id" use="required"/>
+    </xs:complexType>
+    <xs:complexType name="Acte">
+        <xs:attribute name="id" type="cab:Id" use="required"/>
+    </xs:complexType>
+    <xs:simpleType name="Sexe">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="M|F"/>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>

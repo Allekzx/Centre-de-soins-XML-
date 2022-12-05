@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?><cab:patient xmlns:act="http://www.ujf-grenoble.fr/l3miage/actes" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cab="http://www.ujf-grenoble.fr/l3miage/medical" xsi:schemaLocation="http://www.ujf-grenoble.fr/l3miage/medical ../xsd/patient.xsd">
+    
+    <!--
+    Document   : patient.xml
+    Created on : 22 novembre 2022, 15:13
+    Author     : Léo Bouvier et Alex Delagrange
+    Description:
+        Cette instance xml du schema patient.xsd est un exemple
+        de données pour un patient du centre de soins.
+        Une page html a été créée pour présenter ces données (patient.html)
+-->
+    
+    
+    <cab:nom>Pien</cab:nom>
+    <cab:prénom>Oscare</cab:prénom>
+    <cab:sexe>F</cab:sexe>
+    <cab:naissance>1975-03-25</cab:naissance>
+    <cab:numéroSS>275032506569237</cab:numéroSS>
+    <cab:adresse>
+        <cab:rue>rue Casimir Brenier</cab:rue>
+        <cab:ville>Grenoble</cab:ville>
+        <cab:codePostal>38000</cab:codePostal>
+    </cab:adresse>
+    <cab:visite date="2015-12-08">
+        <cab:intervenant>
+            <cab:nom>Fréchie</cab:nom>
+            <cab:prénom>Sarah</cab:prénom>
+        </cab:intervenant>
+        <cab:acte> 
+            Prélèvement par ponction veineuse directe
+        </cab:acte>
+        <cab:acte>
+            Inection intraveineuse directe isolée.
+        </cab:acte>
+    </cab:visite>
+</cab:patient>

@@ -1,0 +1,68 @@
+html {
+    background-image: url("../photo/centre-de-soins2.jpg");
+    background-size: 100%;
+    font-family: tahoma, sans-serif;
+    color: #E6EBEE;}
+
+body {
+     font-family: tahoma, sans-serif;
+     color: #E6EBEE;}
+
+#card {background-color: darkgray;
+      height: auto;
+      width: 600px;
+      margin: 15vh auto;
+      border-radius: 25px;
+      padding-bottom: 1px;
+      box-shadow: 2px 2px 5px #4069E2;}
+
+h1 {color: white;
+   text-align: center;
+   width: 100%;
+   background-color: #E6EBEE;
+   border-radius: 25px 25px 0 0;
+   color: #393B45;
+   padding: 30px 0;
+   font-weight: 800;
+   margin: 0;}
+
+
+#bio {display: block;
+     margin: auto;
+     width: 280px;
+     height: auto;
+     border-radius: 20px;
+     box-shadow:  5px 5px 10px #bebebe,
+             -5px -5px 10px #ffffff;
+     padding: 10px;}
+
+#bio p {color: #E6EBEE;
+       font-weight: lighter;
+       font-size: 15px;
+       text-align: justify;}
+
+
+td {text-align:center; border-bottom:1px solid black;}
+table {
+        background-color: transparent;
+        border: 3px solid black;
+        border-radius: 7px;
+        width: 70%;
+        height: auto;
+        text-align:center;
+        margin : auto;
+        margin-bottom: 20px;
+        
+}
+caption{
+    width: 350px;
+}
+
+h3{
+    align-content: center;
+    color: black;
+}
+
+td{
+    border-right: 1px solid black;
+}
